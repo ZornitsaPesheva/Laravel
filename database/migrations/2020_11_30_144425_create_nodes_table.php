@@ -15,7 +15,7 @@ class CreateNodesTable extends Migration
     {
         Schema::create('nodes', function (Blueprint $table) {
             $table->id();
-            $table->integer('reportsTo');
+            $table->integer('reportsTo')->nullable();
             $table->timestamps();
         });
     }
