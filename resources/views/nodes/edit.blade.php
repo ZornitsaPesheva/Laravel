@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('noded.update',$node->id) }}" method="POST">
+    <form action="{{ route('nodes.update',$node->id) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -37,7 +37,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>reportsTo:</strong>
-                    <textarea class="form-control" style="height:150px" name="reportsTo" placeholder="ReportsTo">{{ $node->detail }}</textarea>
+                    <textarea class="form-control" style="height:150px" name="reportsTo" placeholder="ReportsTo">{{ $node->reportsTo }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
