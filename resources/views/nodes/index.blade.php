@@ -22,11 +22,11 @@
         <tr>
             <th>Id</th>
             <th>ReportsTo</th>
-            <th width="280px">Action</th>
+            <!-- <th width="280px">Action</th> -->
         </tr>
         @foreach ($nodes as $node)
         <tr>
-            <td>{{ ++$i }}</td>
+            <!-- <td>{{ ++$i }}</td> -->
             <td>{{ $node->id }}</td>
             <td>{{ $node->reportsTo }}</td>
             <td>
