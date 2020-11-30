@@ -40,7 +40,7 @@ class NodeController extends Controller
     {
         $request->validate([
             'id' => 'required',
-            'reportsTo' => 'required',
+          //  'reportsTo' => 'required',
         ]);
     
         Node::create($request->all());
@@ -82,7 +82,7 @@ class NodeController extends Controller
     {
         $request->validate([
             'id' => 'required',
-            'reportsTo' => 'required',
+        //    'reportsTo' => 'required',
         ]);
     
         $node->update($request->all());
