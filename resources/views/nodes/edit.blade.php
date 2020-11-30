@@ -31,7 +31,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Id:</strong>
-                    <input type="text" name="id" value="{{ $node->name }}" class="form-control" placeholder="Id">
+                    <input type="text" name="id" value="{{ $node->id }}" class="form-control" placeholder="Id">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
