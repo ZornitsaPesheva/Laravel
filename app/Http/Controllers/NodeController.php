@@ -15,9 +15,10 @@ class NodeController extends Controller
     public function index()
     {
         $nodes = Node::latest()->paginate(5);
+     //   return compact('nodes');
     
-        return view('nodes.index',compact('nodes'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+         return view('nodes.index',compact('nodes'))
+             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

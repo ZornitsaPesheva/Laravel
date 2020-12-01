@@ -46,17 +46,23 @@
         @endforeach
     </table>
 
-    <div id="tree">Chart here</div>
+    <div id="tree">
+        Chart here</div>
     <script>
         var chart = new OrgChart(document.getElementById("tree"), {
-            nodeBinding: {
-                field_0: "name"
+            enableDragDrop: true,
+            nodeMenu: {
+                edit: { text: "Edit" },
+                add: { text: "Add" },
+                remove: { text: "Remove" }
             },
-            nodes: [
-                { id: 1, name: "Amber McKenzie" },
-                { id: 2, pid: 1, name: "Ava Field" },
-                { id: 3, pid: 1, name: "Peter Stevens" }
-            ]
+            nodeBinding: {
+                field_0: "id"
+            }
+        });
+
+        $.get("@Url.Action("index")").done(function (response) {
+            chart.load(response.nodes);
         });
     </script>
   
