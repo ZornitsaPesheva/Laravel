@@ -6,9 +6,9 @@
             <div class="pull-left">
                 <h2>Laravel 8 CRUD Example from scratch - ItSolutionStuff.com</h2>
             </div>
-            <div class="pull-right">
+            <!-- <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('nodes.create') }}"> Create New Node</a>
-            </div>
+            </div> -->
         </div>
     </div>
    
@@ -18,36 +18,10 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
-        <tr>
-            <th>Id</th>
-            <th>ReportsTo</th>
-            <!-- <th width="280px">Action</th> -->
-        </tr>
-        @foreach ($nodes as $node)
-        <tr>
-            <!-- <td>{{ ++$i }}</td> -->
-            <td>{{ $node->id }}</td>
-            <td>{{ $node->reportsTo }}</td>
-            <td>
-                <form action="{{ route('nodes.destroy',$node->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('nodes.show',$node->id) }}">Show</a>
-    
-                    <a class="btn btn-primary" href="{{ route('nodes.edit',$node->id) }}">Edit</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
+
 
     <div id="tree">
-        Chart here</div>
+        </div>
     <script>
         var chart = new OrgChart(document.getElementById("tree"), {
             enableDragDrop: true,
@@ -61,11 +35,10 @@
             }
         });
 
-        $.get("@Url.Action("index")").done(function (response) {
-            chart.load(response.nodes);
-        });
+        var something = {!! $nodes !!};
+        chart.load(something);
+        console.log(something);
+
     </script>
-  
-    {!! $nodes->links() !!}
       
 @endsection
