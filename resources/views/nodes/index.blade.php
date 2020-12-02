@@ -37,7 +37,7 @@
       
    
         var app = @json($nodes);
-      //  var something = {!! $nodes !!};
+
         chart.load(app);
         console.log(app);
 

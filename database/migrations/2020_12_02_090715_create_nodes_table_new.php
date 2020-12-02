@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNodesTable extends Migration
+class CreateNodesTableNew extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,6 @@ class CreateNodesTable extends Migration
     {
         Schema::create('nodes', function (Blueprint $table) {
             $table->id();
-            $table->integer('pid')->nullable();
             $table->timestamps();
         });
     }

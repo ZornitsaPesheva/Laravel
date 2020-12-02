@@ -18,37 +18,10 @@
         </div>
     @endif
    
+  
     <table class="table table-bordered">
         <tr>
-            <th>Id</th>
-            <th>pid</th>
-            <!-- <th width="280px">Action</th> -->
-        </tr>
-        @foreach ($nodes as $node)
-        <tr>
-            <!-- <td>{{ ++$i }}</td> -->
-            <td>{{ $node->id }}</td>
-            <td>{{ $node->pid }}</td>
-            <td>
-                <form action="{{ route('nodes.destroy',$node->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('nodes.show',$node->id) }}">Show</a>
-    
-                    <a class="btn btn-primary" href="{{ route('nodes.edit',$node->id) }}">Edit</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-
-    <table class="table table-bordered">
-        <tr>
-            <th>Id</th>
+            <th>id</th>
             <th>pid</th>
             <!-- <th width="280px">Action</th> -->
         </tr>

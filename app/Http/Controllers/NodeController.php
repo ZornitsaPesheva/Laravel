@@ -15,15 +15,15 @@ class NodeController extends Controller
     public function index()
     {
 //
-        $nodes = Node::get();
-        var_dump($nodes[1]['id']);
-        return view('nodes.index', ['nodes' => $nodes]);
+       $nodes = Node::get();
+ //      var_dump($nodes[1]['id']);
+       return view('nodes.index', ['nodes' => $nodes]);
 
 
-      //   $nodes = Node::latest()->paginate(5);   
+    //     $nodes = Node::latest()->paginate(5);   
     
-     //    return view('nodes.index',compact('nodes'))
-       //      ->with('i', (request()->input('page', 1) - 1) * 5);
+      //   return view('nodes.index',compact('nodes'))
+        //     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -46,7 +46,7 @@ class NodeController extends Controller
     {
         $request->validate([
             'id' => 'required',
-          //  'reportsTo' => 'required',
+
         ]);
     
         Node::create($request->all());
@@ -88,7 +88,6 @@ class NodeController extends Controller
     {
         $request->validate([
             'id' => 'required',
-        //    'reportsTo' => 'required',
         ]);
     
         $node->update($request->all());

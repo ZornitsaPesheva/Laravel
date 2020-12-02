@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNodesTable extends Migration
+class CreateNodesTableIdPid extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateNodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('nodes', function (Blueprint $table) {
+        Schema::create('nodes_table_id_pid', function (Blueprint $table) {
             $table->id();
             $table->integer('pid')->nullable();
-            $table->timestamps();
         });
     }
 
@@ -27,6 +26,6 @@ class CreateNodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nodes');
+        Schema::dropIfExists('nodes_table_id_pid');
     }
 }
