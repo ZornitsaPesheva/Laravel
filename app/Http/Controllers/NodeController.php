@@ -16,6 +16,7 @@ class NodeController extends Controller
     {
 //
         $nodes = Node::get();
+        var_dump($nodes[1]['id']);
         return view('nodes.index', ['nodes' => $nodes]);
 
 
