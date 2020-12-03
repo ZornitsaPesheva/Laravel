@@ -44,6 +44,7 @@ class NodeController extends Controller
      */
     public function store(Request $request)
     {
+        var_dump($request);
         $request->validate([
             'id' => 'required',
 

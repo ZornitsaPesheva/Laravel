@@ -35,11 +35,33 @@
             }
         });
       
+
+        chart.on('add', function (sender, node) {
+            node.id = 0;
+            node.pid = parseInt(node.pid);
+            
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type:'POST',
+                url:"{{ route('nodes.store') }}",
+                data: node,
+                success:function(data){
+                    sender.addNode(node);
+                }
+            });
+
+            return false;
+        });
    
         var app = @json($nodes);
 
         chart.load(app);
-        console.log(app);
+    //    console.log(app);
 
     </script>
       
