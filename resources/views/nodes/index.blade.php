@@ -37,7 +37,7 @@
       
 
         chart.on('add', function (sender, node) {
-            node.id = 0;
+            node.id = new Date().valueOf();
             node.pid = parseInt(node.pid);
             
             $.ajaxSetup({
@@ -51,7 +51,7 @@
                 url:"{{ route('nodes.store') }}",
                 data: node,
                 success:function(data){
-                    sender.addNode(node);
+                    sender.addNode(node); // node is adding
                 }
             });
 
@@ -61,7 +61,6 @@
         var app = @json($nodes);
 
         chart.load(app);
-    //    console.log(app);
 
     </script>
       

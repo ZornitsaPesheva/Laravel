@@ -44,14 +44,14 @@ class NodeController extends Controller
      */
     public function store(Request $request)
     {
-        var_dump($request);
+
         $request->validate([
             'id' => 'required',
 
         ]);
     
         Node::create($request->all());
-     
+
         return redirect()->route('nodes.index')
                         ->with('success','Node created successfully.');
     }
